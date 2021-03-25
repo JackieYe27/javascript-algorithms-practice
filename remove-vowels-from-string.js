@@ -30,3 +30,30 @@ let removeVowels = (string => {
 
 removeVowels("leetcodeisacommunityforcoders")
 removeVowels("aeiou")
+
+// create object with aeiou as properties
+// create new string variable
+// loop through string
+// if object.value !== string[i]
+    // then push into new string
+// return new string
+
+let removeVowels2 = (string => {
+    let vowels = {
+        "a": true,
+        "e": true,
+        "i": true,
+        "o": true,
+        "u": true,
+    };
+    let noVowelString ="";
+    for(let i=0; i < string.length; i++) {
+        if (!vowels[string[i]]) {
+            noVowelString += string[i]; 
+        }
+    }
+    return noVowelString;
+});
+
+removeVowels2("beeeeiiiiiioooouuuur")
+removeVowels2("aeiou")
