@@ -33,3 +33,11 @@ let defang = (ipAddress => {
 });
 
 defang("255.100.50.0")
+
+// split address at each "." since its a string to become array [1,2,3]...
+// then join where we change the comma into [.];
+
+
+let defang2 = (address => {
+    return address.split(".").join("[.]");
+});
