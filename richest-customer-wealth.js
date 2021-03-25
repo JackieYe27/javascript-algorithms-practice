@@ -22,3 +22,30 @@
 // Example 3:
 // Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
 // Output: 17
+
+// given array with inner arrays
+// going to compare who is the richest by summing the innter arrays vs each other
+// create richest variable
+// loop though accounts 
+    // loop through inner arrays while adding and comparing who is the richest
+// return richest
+
+
+
+var maximumWealth = function(accounts) {
+    let richest = 0;
+    for(let i = 0; i < accounts.length; i++) {
+        // sum is inside the for loop so it can be reset as opposed to constantly being added to
+        let sum = 0
+        for (let j = 0; j < accounts[i].length; j++) {
+            sum += accounts[i][j];
+            console.log(sum)
+            if (richest <= sum) {
+                richest = sum;
+            }
+        }
+    }
+    return richest;
+};
+
+maximumWealth([[1,2,3],[3,2,1]])
