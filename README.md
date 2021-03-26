@@ -1,2 +1,2 @@
 # javascript-algorithms-practice
-A log of daily practice problems!!!
+A log of daily practice problems!!!!
