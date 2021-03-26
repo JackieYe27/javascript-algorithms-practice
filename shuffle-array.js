@@ -14,6 +14,18 @@
 // Input: nums = [1,1,2,2], n = 2
 // Output: [1,2,1,2]
 
-let shuffle = (array => {
+// given an array and an n we want to split the array at n
+// then with the 2 arrays create a new one where we mix in both
 
+let shuffle = ((array, n) => {
+    let arrA = array.slice(0, n);
+    let arrB = array.slice(n, array.length+1);
+    shuffleArr = [];
+    for(let i = 0; i < n; i++) { // when n = 0, n = 1 and so on
+        shuffleArr.push(arrA[i]); // push arrA[0], push Arr[1]
+        shuffleArr.push(arrB[i]); // then push arrB[0], push arr[1]
+    }
+    return shuffleArr;
 });
+
+shuffle([2,5,1,3,4,7], 3)
