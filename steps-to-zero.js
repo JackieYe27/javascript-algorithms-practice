@@ -25,8 +25,26 @@
 // Input: num = 123
 // Output: 12
 
-
+// given a number we can only use divid by 2 or subtract by 1 to get to zero
+// output is how many steps it took
 
 var numberOfSteps  = function(num) {
-    
+    // given the number if it can be divided by 2 or subracted by 1 we want to use the expressiion until we get 0
+    let steps = 0;
+    while (num > 0) {
+        // if the number can be divided by 2 do it
+        if (Number.isInteger(num / 2)) {
+            // add 1 to step count
+            steps++
+            // apply action to number and set number as next starting number
+            num/=2;
+        } else {
+            // it can be divided into an integer then just subtract by 1
+            steps++
+            num--;
+        }
+    }
+    return steps;
 };
+
+numberOfSteps(14);
