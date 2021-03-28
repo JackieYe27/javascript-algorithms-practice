@@ -19,6 +19,22 @@
 // Input: nums = [7,7,7,7]
 // Output: [0,0,0,0]
 
+// given an array of numbers
+// given each index find how many numbers are smaller than that number
+// return as an array of outcomes
+
 var smallerNumbersThanCurrent = function(nums) {
-    
+    let result = [];
+    for(let i=0; i<nums.length; i++) { // 6
+        let count = 0;
+        for(let j=0; j<nums.length; j++) { // 6, 5, 4, 8
+            if(j!=i && nums[j] < nums[i]) { // 6/=6, 6<5, 6<4, 6<8?
+                count++; // 0, 1, 2, 0
+            }            
+        }
+        result.push(count); // count = 2 push 2 into result;
+    }    
+    return result;
 };
+
+smallerNumbersThanCurrent([6,5,4,8]);
