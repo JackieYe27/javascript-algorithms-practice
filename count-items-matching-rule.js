@@ -58,3 +58,5 @@ var countMatches = function(items, ruleKey, ruleValue) {
 
 countMatches([["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"]],
 "name","qqqq")
+
+// check
