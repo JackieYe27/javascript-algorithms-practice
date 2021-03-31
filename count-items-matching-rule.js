@@ -46,5 +46,15 @@ var countMatches = function(items, ruleKey, ruleValue) {
     return count;
 };
 
+var countMatches = function(items, ruleKey, ruleValue) {
+    const RULE_KEYS = {
+      type: 0,
+      color: 1,
+      name: 2,
+    };
+    const ruleInd = RULE_KEYS[ruleKey];
+    return items.filter(item => item[ruleInd] === ruleValue).length;
+  };
+
 countMatches([["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"],["qqqq","qqqq","qqqq"]],
 "name","qqqq")
