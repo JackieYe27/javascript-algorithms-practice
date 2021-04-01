@@ -14,7 +14,25 @@
 // Input: nums = [1,1,2,3]
 // Output: [1,3,3]
 
+// Input is an array
+// Output is also an array
+// Want to return an array where each element is 
+// loop through the array 
+    // as we loop through create a counter for the element 
+    // while the counter which is element still exists add the value next to it that many times 
+// return new array
 
 decompressRLElist = (nums) => {
-
+    let decompArr = [];
+    // the loop needs to be every other number so i+=2
+    for (i = 0; i < nums.length; i+=2) {
+        let count = nums[i];
+        while( count > 0) {
+            decompArr.push(nums[i+1]);
+            count--
+        }
+    }
+    return decompArr;
 };
+
+decompressRLElist([1,1,2,3])
