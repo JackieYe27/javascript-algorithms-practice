@@ -20,3 +20,31 @@
 // Example 3:
 // Input: command = "(al)G(al)()()G"
 // Output: "alGalooG"
+
+// input is a string thats either "G", "()", or "(al"
+// output is the string that is parsed 
+// given only 3 commands so we can just create variables equal to the commands
+
+let interpet = (command) => {
+    // have the final parsed string
+    let final = '';
+    // set a counter
+    let i = 0
+    // keep looping through until no more words so we will consider "()" as plus 2 "(al)" 4 and "G" as 1
+    while(i < command.length) {
+        if (command[i] === "(" && command[i +1] === ")") {
+            final = final + "o";
+            i = i + 2;
+        } else if (command[i] === '(' && command[i + 1] === "a") {
+            final = final + "al"
+            i = i + 4;
+
+        } else {
+            final = final + "G"
+            i++;
+        }
+    }
+    return final;
+};
+
+interpet("G()()()()(al)")
