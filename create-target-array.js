@@ -27,6 +27,17 @@
 // 4            3        [1,2,3,4]
 // 0            0        [0,1,2,3,4]
 
+// input is 2 arrays
+// output is one array modified given the 2 arrays
+// look through the nums array and add the number into new array equal to the position of the index array
+
+
 var createTargetArray = function(nums, index) {
-    
+    let final = [];
+    for (i = 0; i < nums.length; i++) {
+        final.splice(index[i], 0, nums[i]);
+    }
+    return final;
 };
+
+createTargetArray([1,2,3,4,0],[0,1,2,3,0])
