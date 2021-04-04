@@ -22,6 +22,31 @@
 // Output: 2
 // Explanation: s can be split into "RL", "RRRLLRLL", since each substring contains an equal number of 'L' and 'R'
 
+// input is a string of Rs and Ls
+// output is the number of balanced R and L combos that can be made
+
+// make it easier to go through numbers make it int array
+// keep count of Ls and Rs
+// if L count = R count
+// main count++
+
+
 let balancedStringSplit = (s) => {
-    
+    let count = 0; 
+    let rCount = 0;
+    let lCount = 0;
+    let sArr = s.split("");
+    for (let i = 0; i < sArr.length; i++) {
+        if (sArr[i] === "L") { 
+        lCount++
+    } else {
+        rCount++
+    }
+    if (lCount === rCount) {
+        count++
+    }
+    }
+    return count;
 }
+
+balancedStringSplit("RLLLLRRRLR");
