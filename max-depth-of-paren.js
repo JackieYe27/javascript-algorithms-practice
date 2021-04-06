@@ -19,20 +19,45 @@
 // Input: s = "(1+(2*3)+((8)/4))+1"
 // Output: 3
 // Explanation: Digit 8 is inside of 3 nested parentheses in the string.
-// Example 2:
 
+// Example 2:
 // Input: s = "(1)+((2))+(((3)))"
 // Output: 3
-// Example 3:
 
+// Example 3:
 // Input: s = "1+(2*3)/(2-1)"
 // Output: 1
-// Example 4:
 
+// Example 4:
 // Input: s = "1"
 // Output: 0
 
+// input is a string
+// output is number of times the string is nested with "()"
+
+// count goes up for every "(" and goes down for every "("
+// need to keep track of each start and end of a "()" with num
+// and if num > count then we set count to equal the num of nests
+
+
 var maxDepth = function(s) {
-    
+    let sArr = s.split("");
+    console.log(sArr);
+    let count = 0
+    let num = 0
+    for (i= 0; i < sArr.length; i++) {
+        if (sArr[i] === "(") {
+            num++;
+        } 
+        if (sArr[i] === ")") {
+            num--;
+        }
+        if (num > count) {
+            count = num;
+        }
+    }
+    return count;
 };
+
+maxDepth("1+(2*3)/(2-1)")
 
