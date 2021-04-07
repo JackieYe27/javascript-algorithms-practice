@@ -38,6 +38,7 @@
 // count goes up for every "(" and goes down for every "("
 // need to keep track of each start and end of a "()" with num
 // and if num > count then we set count to equal the num of nests
+// each time we come across a "(" that signals a nest and then we close with ")" to cancel out the count
 
 
 var maxDepth = function(s) {
