@@ -26,6 +26,14 @@
 // Input: arr = [10,11,12]
 // Output: 66
 
+// input an array with positive integers
+// return sum of sorts
+// odd length sub arrays basically need to loop through add all nums first since odd length subarray of 1
+// then check for odd length subarrays and individually add them together
+// need counter
+
 let sumOddLengthSubArrays = (array) => {
-    
+
 };
+
+sumOddLengthSubArrays([10,11,12])
