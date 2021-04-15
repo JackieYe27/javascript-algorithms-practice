@@ -27,14 +27,17 @@ let validAnagram = (str1, str2) => {
         obj1[str1[i]] = (obj1[str1[i]] || 0) + 1;
     }
     for (let i = 0; i < str2.length; i++) {
-        obj2[st2[i]] = (obj2[str2[i]] || 0) + 1;
+        obj2[str2[i]] = (obj2[str2[i]] || 0) + 1;
     }
     for (let val in obj1) {
-        if (obj1[val] !== obj2[val]) {
+        if (!(val in obj2)) {
+            return false;
+        }
+        if (obj2[val] !== obj1[val]) {
             return false;
         }
     }
     return true;
 }
 
-validAnagram("stringg", "gnistrg")
+validAnagram("stringgb", "gnistrga")

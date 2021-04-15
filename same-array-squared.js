@@ -21,9 +21,18 @@ let same = (arr1, arr2) => {
     for (let i = 0; i < arr1.length; i++) {
        obj1[arr1[i]] = (obj1[arr1[i]] || 0) + 1
     }
-    for (let val of arr2) {
-        obj2[val] = (obj2[val] || 0) + 1
+    for (let i = 0; i < arr2.length; i++) {
+        obj2[arr2[i]] = (obj2[arr2[i]] || 0) + 1
     }
-    console.log(obj1)
+    for(let key in obj1) {
+        if(!(key ** 2 in obj2)) {
+            return false;
+        }
+        if(obj2[key ** 2] !== obj1[key]) {
+            return false;
+        }
+    }
+    return true;
 }
+
 same([1,2,3,4,1], [1,4,9,16,1])
