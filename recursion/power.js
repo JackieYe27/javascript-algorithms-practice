@@ -45,3 +45,21 @@ let recursiveRange = (number) => {
 }
 
 recursiveRange(6)
+
+/*
+    Write a recursive function called fib which accepts a number and returns the nth number in the fibonacci sequence.
+    Recall that the Fibbonacci sequence is the sequence of whole numbers 1, 1, 2, 3, 5, 8. Starts with 1 and 1 but every num
+    after is equal to the sume of the previous 2 nums
+*/
+
+function fib(num) {
+    if (num <=2) return 1;
+    return fib(num-1) + fib(num-2)
+}
+
+// 4
+// return fib(3) + fib(2)
+//     return fib(2) + fib(1) + 1
+//         return 1 + 1 + 1
+
+fib(4) // return 3
