@@ -3,6 +3,12 @@
     substring with all distinct characters.
 */
 
+// input is a string
+// output is the length of the longest string inside with unique characters
+
+
 let findLongestSubstring = (string) => {
-    
-}
+
+}  
+
+findLongestSubstring('abcabc')
