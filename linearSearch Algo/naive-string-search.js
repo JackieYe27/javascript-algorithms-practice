@@ -9,7 +9,7 @@ let subString = (str, sub) => {
             if (str[i]!== sub[j]) {
                 break;
             }
-            if(str[i] === sub[j]) {
+            if(j === sub.lenth-1) {
                 counter ++
             }
         }
