@@ -3,7 +3,7 @@
     consists of all the elements in the two input arrays.
 */
 
-let mergeArr = (arr1, arr2) => {
+let mergeArrs = (arr1, arr2) => {
     let results = [];
     let i = 0;
     let j = 0;
@@ -26,3 +26,17 @@ let mergeArr = (arr1, arr2) => {
     }
     return results
 }
+
+// Break up the array into halves until you have arrays that are empty or have one element
+// Merge those arrays with other sorted arrays until you are back at the full length of the array 
+// return back the array
+
+let mergeSort = (arr) => {
+    if (arr.length <= 1) return arr;
+    let mid = Math.floor(arr.length/2);
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return mergeArrs(left, right)
+}
+
+mergeSort([20,21,10,5])
