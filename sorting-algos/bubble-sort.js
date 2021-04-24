@@ -42,3 +42,4 @@ let bubbleSort = (arr) => {
 }
 
 bubbleSort([1,2,3,4,4,1,10,7,6,1])
+
