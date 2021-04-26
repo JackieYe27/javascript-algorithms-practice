@@ -26,6 +26,22 @@
 // Input: arr = [10,11,12]
 // Output: 66
 
+// input is an array
+// output sum of all the odd length sub arrays
+
+
 var sumOddLengthSubarrays = function(arr) {
-    
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for(let j = i;j < arr.length; j++) {
+            if((i-j) % 2==0) {
+                for(let k=i; k <= j; k++) {
+                    count+= arr[k];
+                }
+            }
+        }
+    }
+    return count;
 };
+
+sumOddLengthSubarrays([10,11,12])
