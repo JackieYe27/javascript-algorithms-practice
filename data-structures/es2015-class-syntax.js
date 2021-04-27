@@ -20,6 +20,13 @@ class Student {
         this.scores.push(score);
         return this.scores;
     }
+    calcAvg() {
+        let sum = this.scores.reduce(function(a,b){return a+b});
+        return sum/this.scores.length;
+    }
+    static enrollStudents() {
+        return 'Enrolling students'
+    }
 }
 
 let emil = new Student('Emil', 'Katz','3');
