@@ -132,12 +132,13 @@ class SinglyLinkedList {
 
         let prev = null;
         let next;
-        for(let i = 0; i < this.length; i++) { // [1,2,3,4,5]
-            next = node.next; // 2
-            node.next = prev; // null
-            prev = node; // 1
-            node = next; // 2
+        for(let i = 0; i < this.length; i++) { // 1 -> 2 -> 3 -> 4 -> 5 
+            next = node.next; // we have the next node 1->2
+            node.next = prev; // we are linking the node to previous node null <- 1
+            prev = node; // moving the prev over one 
+            node = next; // moving current node over one 
         }
+        // 1 <- 2 <- 3 <- 4 <- 5
         return this;
     }
 }
