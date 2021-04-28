@@ -1,5 +1,7 @@
 // A data structure that contains a head, tail, and length property.
 // consists of nodes that have a value and a pointer to another node or null.
+// BEST AT ISERTION AND DELETEION
+// FOUNDTAION FOR OTHER DATA STRUCTURES
 
 class Node {
     constructor(val) {
@@ -8,9 +10,6 @@ class Node {
     }
 }
 
-// let first = new Node('hi');
-// first.next = new Node('hi there');
-// first.next.next = new Node('how');
 class SinglyLinkedList {
     constructor() {
         this.head = null;
