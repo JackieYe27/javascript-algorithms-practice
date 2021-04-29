@@ -110,11 +110,29 @@ class DoublyLinkedList {
 
             prevNode.next = newNode;
             newNode.prev = prevNode;
-            
+
             newNode.next = changedNode;
             changedNode.prev = newNode;
         }
         this.length++;
         return true;
+    }
+    remove(i) {
+        if (i < 0 || i > this.length) return undefined;
+        if (i === 0) return this.shift();
+        if (i === this.length-1) return this.pop();
+
+        let removedNode = this.get(i);
+        let nextNode = removedNode.next;
+        let prevNode = removedNode.prev;
+
+        removedNode.next = null;
+        removedNode.prev = null;
+
+        nextNode.prev = prevNode;
+        prevNode.next = nextNode;
+
+        this.length--;
+        return removedNode;
     }
 }
