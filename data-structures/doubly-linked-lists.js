@@ -69,7 +69,7 @@ class DoublyLinkedList {
     get(i) {
         if (i < 0 || i >= this.length) return null;
         let middle = this.length/2;
-        if(i < middle) {
+        if(i <= middle) {
             let counter = 0;
             let start = this.head;
             while(counter !==i) {
@@ -78,8 +78,8 @@ class DoublyLinkedList {
             }
             return start;
         }
-        if( i > middle) {
-            let counter = this.legth-1;
+        if( i >= middle) {
+            let counter = this.length-1;
             let start = this.tail;
             while(counter !== i) {
                 start = start.prev;
@@ -87,5 +87,34 @@ class DoublyLinkedList {
             }
             return start;
         }
+    }
+    set(val, i) {
+        let getResult = this.get(i);
+        if(getResult !== null) {
+            getResult.val = val;
+            return true;
+        }
+        return false;
+    }
+    insert(val, i) {
+        if(i < 0 || i > this.length) return false;
+        if (i === 0) {
+            return !!this.unshift(val);
+        }
+        if (i === this.length) {
+           return !!this.push(val);
+        } else {
+            let newNode = new Node(val);
+            let prevNode = this.get(i-1);
+            let changedNode = prevNode.next;
+
+            prevNode.next = newNode;
+            newNode.prev = prevNode;
+            
+            newNode.next = changedNode;
+            changedNode.prev = newNode;
+        }
+        this.length++;
+        return true;
     }
 }
