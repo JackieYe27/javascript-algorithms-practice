@@ -42,4 +42,22 @@ class HashTable {
         }
         return total;
     }
+    set(key, val) {
+        let newHash = this.hash(key);
+        if(!this.keyMap[newHash]) {
+            this.keyMap[newHash] = [];
+        }
+        this.keyMap[newHash].push([key, val]);
+    }
+    get(key) {
+        let newHash = this.hash(key);
+        if(this.keyMap[newHash]) {
+            for (let i = 0; i < this.keyMap[newHash].length; i++) {
+                if(this.keyMap[newHash][i][0] === key) {
+                    return this.keyMap[newHash][i][1];
+                }
+            }
+        }
+        return undefined;
+    }
 }
