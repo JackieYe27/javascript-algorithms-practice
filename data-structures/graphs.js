@@ -58,4 +58,31 @@ class Graph {
          delete this.adjacencyList[v];
          return this;
      }
+     // Explore one neighbor then continue on with that one neighbor until the end of conenction
+     DFSrecursive(start) {
+        // Create a list to store the end result
+        let list = [];
+        // create an object to store visited vertices
+        let visited = {};
+        // Create a helper function which ac cepts a vertex
+        let adjacencyList = this.adjacencyList;
+        let traverse = (vertex) => {
+            // Should return early if the vertex is empty
+            if(!vertex) return null;
+            // Should place the vertex it accepts into the visted object and push that vertex into the result array
+            list.push(vertex);
+            visited[vertex] = true;
+            // Loop over all of the values in the adjacencyList for that vertex
+            adjacencyList[vertex].forEach(neighbor => {
+                // If any of those values have not been visited, recursively invoke the helper function with that vertex
+                if(!visited[neighbor]) {
+                    return traverse(neighbor);
+                }
+            })
+        }
+        // Invoke the helper function with the starting vertex
+        traverse(start);
+        // Return the results array
+        return list;
+     }
 }  
