@@ -85,4 +85,32 @@ class Graph {
         // Return the results array
         return list;
      }
+     DFSIterative(start) {
+         // create a stack(array) to keep track of vertices
+         let s = [start];
+         // create a list to store the end result to be returned at the very end
+         let results = [];
+         // Create an object to store visited vertices
+         let visited = {};
+         // add the starting vertex to the stack and mark it visited
+         visited[start] = true;
+         // while the stack has something in it
+         while(s.length){
+            // pop the next vertex from the stack
+            let currentVertex = s.pop();
+             // add to result
+            results.push(currentVertex);
+            // if that vertex hasnt been visited
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                // mark as visited
+                visited[neighbor] = true;
+                // push all of its neighbors into the stack
+                s.push(neighbor);
+                }
+            })
+         }
+        // return the result array
+        return results;
+     }
 }  
