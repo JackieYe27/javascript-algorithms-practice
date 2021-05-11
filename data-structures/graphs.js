@@ -113,4 +113,22 @@ class Graph {
         // return the result array
         return results;
      }
+     BFS(start) {
+        let queue = [start];
+        let results = [];
+        let visited = {};
+        visited[start] = true;
+        while(queue.length) {
+            console.log(queue);
+            let currentVertex = queue.shift();
+            results.push(currentVertex);
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            })
+        }
+        return results;
+     }
 }  
