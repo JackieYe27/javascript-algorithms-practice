@@ -17,3 +17,20 @@ class WeightedGraph {
         this.adjacencyList[v2].push({node:v1, weight});
     }
 }
+
+// Basic naive priority queue with the goal of getting the smallest priority
+class PriorityQueue {
+    constructor() {
+        this.values = [];
+    };
+    enqueue(val, priority) {
+        this.values.push({val, priority});
+        this.sort();
+    };
+    dequeue() {
+        return this.values.shift();
+    };
+    sort() {
+        this.values.sort((a,b) => a.priority - b.priority);
+    };
+}

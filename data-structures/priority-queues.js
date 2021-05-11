@@ -9,8 +9,8 @@ class PriorityQueue {
     constructor() {
         this.values= [];
     }
-    enqueue(val, prioirty) {
-        let newNode = new Node(val, prioirty);
+    enqueue(val, priority) {
+        let newNode = new Node(val, priority);
         this.values.push(newNode);
         this.bubbleUp()
     }
