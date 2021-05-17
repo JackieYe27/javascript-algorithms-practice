@@ -159,3 +159,4 @@ var getDecimalValue = function(head) {
     };
     return parseArray(valuesArr);
 };
+
