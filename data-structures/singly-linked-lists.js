@@ -143,3 +143,19 @@ class SinglyLinkedList {
 }
 
 let list = new SinglyLinkedList();
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Problems With SLL
+
+var getDecimalValue = function(head) {
+    let valuesArr = [];
+    while(head) {
+        valuesArr.push(head.val);
+        head = head.next;
+    };
+    const parseArray = arr => {
+    const binaryString = arr.join("");
+        return parseInt(binaryString, 2);
+    };
+    return parseArray(valuesArr);
+};
