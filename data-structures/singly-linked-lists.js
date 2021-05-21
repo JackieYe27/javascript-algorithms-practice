@@ -160,3 +160,9 @@ var getDecimalValue = function(head) {
     return parseArray(valuesArr);
 };
 
+var deleteNode = function(node) {
+    let newCurrent = node.next;
+    let nextNode = node.next.next
+    node.val = newCurrent.val;
+    node.next = nextNode;
+};
