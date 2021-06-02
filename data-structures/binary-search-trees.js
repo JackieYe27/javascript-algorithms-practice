@@ -166,6 +166,24 @@ var maxDepth = function(root) {
 // Input: root = [10,5,15,3,7,null,18], low = 7, high = 15
 // Output: 32
 // Explanation: Nodes 7, 10, and 15 are in the range [7, 15]. 7 + 10 + 15 = 32.
+
+// We will need to traverse the tree maybe through recusion
+// create sum variable
+// base case check if node exists if it doesnt return;
+// if it does check val
+    // add to sum;
+    // traverse the node.left and node.right
+// return sum
 var rangeSumBST = function(root, low, high) {
-    
+    let sum = 0
+    let traverse = (node) => {
+        if(!node) return;
+        if(node.val >= low && node.val <= high) {
+            sum += node.val;
+        }
+        traverse(node.left);
+        traverse(node.right);
+    }
+    traverse(root);
+    return sum;
 };
