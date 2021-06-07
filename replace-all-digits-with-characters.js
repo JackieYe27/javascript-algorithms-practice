@@ -29,9 +29,6 @@ var replaceDigits = function(s) {
     s.split("").forEach((letter, i) => {
         if (!parseInt(letter) && letter !== "0") {
             final += letter;
-        } else if(letter === 0) {
-            console.log(typeof letter);
-            final += s[i-1];
         } else {
             console.log(parseInt(letter));
             let charCode = String.fromCharCode(s[i-1].charCodeAt(0) + parseInt(letter));
