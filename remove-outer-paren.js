@@ -29,6 +29,30 @@ The input string is "()()", with primitive decomposition "()" + "()".
 After removing outer parentheses of each part, this is "" + "" = "".
 */
 
-const removeOuterParentheses = (s) => {
+// input: string containing a combination of parenthesis
+// output: return a string where we remove perfect combos of the parenthesis
 
+// make note of when we come across "(" as that indicates a start
+    // keep a counter + 1
+// keep going until we come across a ")"
+    // counter - 1
+// And if counter is greater than 1 we know that at the current value it is inside a perfect set
+    // so keep track of that value
+// note that we want to add the value in before subtracting as that could make final string not include current value
+
+const removeOuterParentheses = (s) => {
+    let counter = 0;
+    let finalString = "";
+    for(let i = 0; i < s.length; i++) {
+        if (s[i] === "(") {
+            counter++
+        }
+        if (counter > 1) {
+            finalString += s[i];
+        }
+        if (s[i] === ")") {
+            counter--;
+        }
+    }
+    return finalString;
 }
