@@ -1,5 +1,5 @@
 /*
-    Merging 2 sorted arras. Create a helper function that creates a new array which is also sorted and 
+    Merging 2 sorted arrays. Create a helper function that creates a new array which is also sorted and 
     consists of all the elements in the two input arrays.
 */
 
