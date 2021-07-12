@@ -33,8 +33,11 @@ let mergeArrs = (arr1, arr2) => {
 
 let mergeSort = (arr) => {
     if (arr.length <= 1) return arr;
+    // get the middle point  10
     let mid = Math.floor(arr.length/2);
+    // sort left side keep sorting until you get one element 
     let left = mergeSort(arr.slice(0, mid));
+    // sort right side keep sorting until you get one element 
     let right = mergeSort(arr.slice(mid));
     return mergeArrs(left, right)
 }

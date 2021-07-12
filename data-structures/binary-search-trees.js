@@ -187,3 +187,17 @@ var rangeSumBST = function(root, low, high) {
     traverse(root);
     return sum;
 };
+
+const invertBST = (root) => {
+    // traverse is going to go through the entire tree left side first then right
+    const traverse = (node) => {
+        if(!node) return;
+        if(node.left) traverse(node.left);
+        if(node.right) traverse(node.right);
+
+        let placeholder = node.left;
+        node.left = node.right;
+        node.right = placeholder;
+    }
+    traverse(root);
+}
