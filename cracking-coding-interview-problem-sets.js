@@ -69,3 +69,16 @@ const urlify = (str) => {
       return Object.keys(sCount).length === 1
     }
   }
+
+
+/*
+
+  Given two strings write a funciton to check if they are one edits or zero edits away
+  3 types of edits can be performed : Insert a char, remove a char, replace a char
+  Examples: cake - ake, pale - ple
+
+*/
+
+const oneEditAway = (s1, s2) => {
+  
+}
