@@ -31,6 +31,60 @@ const permutation = (str1, str2) => {
   return true;
 }
 
+// Given an array of surveys and users, check which users fall into with survey
+const surveys = [
+  {
+    name: "survey1",
+    age: [24, 25, 26],
+    gender: ["M", "F"],
+    isMarried: false
+  },
+  {
+    name: "survey2",
+    age: [30],
+    gender: ["M"],
+    isMarried: true
+  },
+  {
+    name: "survey3",
+    age: [24, 25, 26, 30],
+    gender: ["F"],
+    isMarried: false
+  },
+  {
+    name: "survey4",
+    age: [25]
+  }
+]
+
+const users = [
+  {
+    name: "jo",
+    age: 25,
+    gender: "M",
+    isMarried: false
+  },
+  {
+    name: "Jane",
+    age: 25,
+    gender: "F",
+    isMarried: false
+  },
+
+]
+
+const userCheck = (survey, users) => {
+  for (let i = 0; i < survey.length; i++) {
+    let currentSurvey = survey[i];
+    for (let j = 0; j < users.length; j++) {
+      let currentUser = users[i];
+      for (let key in currentSurvey) {
+      
+    }
+  }
+}
+
+
 const urlify = (str) => {
   let arrStr = str.split("")
   for (let i = 0; i < arrStr.length; i++) {
