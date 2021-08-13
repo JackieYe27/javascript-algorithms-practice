@@ -97,34 +97,29 @@ const urlify = (str) => {
 }
 
 // St4ring permuation
-  // if string is even then we need an even amount if letters for each letter
+  // if string is even then we need an even amount of letters for each letter
   // if string is odd then we know that there is only 1 letter that will be odd
   // use object to store letters
     // if letter is already in the object we delete it
   // at the end if the s is even - have empty object, is odd - have 1 unique value
 
   const isPalindrome = (s) => {
-    let sCount = {};
-    let charCount = 0;
-    for (let i = 0; i < s.length; i++) {
-      let c = s[i].toLowerCase();
-      if (c === " ") continue;
-      if (sCount[c]) {
-        delete sCount[c];
+    let hash = {};
+    let count = 0;
+    for(let i = 0; i < s.length; i++) {
+      if (hash[s[i]]) {
+        delete hash[s[i]];
       } else {
-        sCount[c] = true;
-      }
-      charCount++
+        hash[s[i]] = true
+      };
+      count++;
     }
-    console.log(charCount);
-    console.log(Object.keys(sCount).length)
-    if (charCount % 2 === 0) {
-      return Object.keys(sCount).length === 0;
+    if (count % 2 === 0) {
+      return Object.keys(hash) === 0;
     } else {
-      return Object.keys(sCount).length === 1
+      return Object.keys(hash) === 1;
     }
   }
-
 
 /*
 
