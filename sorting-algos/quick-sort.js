@@ -29,20 +29,19 @@ let swap = (arr, i, j) => {
 }
 
 let pivot = (arr, start=0, end=arr.length-1) => {
-    let pivot = arr[start];
+    let p = arr[start];
     let swapIdx = start;
 
     for (let i = start + 1; i < arr.length; i++) {
-        if (pivot > arr[i]) {
-            swapIdx++;
-            // swap function to swap
-            // [4,8,2,1,5,7,6,3] -> [4,2,8,1,5,7,6,3] -> [4,2,1,8,5,7,6,3]
-            swap(arr, swapIdx, i);
-            console.log(arr)
-        }
+      if (p > arr[i]) {
+          swapIdx++
+          // swap function to swap
+          // [4,8,2,1,5,7,6,3] -> [4,2,8,1,5,7,6,3] -> [4,2,1,8,5,7,6,3]
+          swap(arr, swapIdx, i);
+      }
     }
-    swap(arr, start, swapIdx)
-    console.log(arr)
+    swap(arr, start, swapIdx);
+    console.log(arr);
     return swapIdx
 }
 

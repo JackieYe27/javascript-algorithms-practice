@@ -10,17 +10,17 @@
 const available = (intervals) => {
   let start = [];
   let end = [];
-
-  for (let i = 0; i < intervals.length; i ++) {
+  for (let i = 0; i < intervals.length; i++) {
     start.push(intervals[i][0]);
     end.push(intervals[i][1]);
   }
-  start.sort((a, b) => a - b);
-  end.sort((a, b) => a - b);
+  
+  start.sort((a,b) => a - b);
+  end.sort((a,b) => a - b);
 
-  for (let i = 0; i < start.length; i++) {
-    if (start[i + 1] < end[i]) {
-      return false
+  for (let j = 0; j < start.length; j++) {
+    if (start[j + 1] < end[j]) {
+      return false;
     }
   }
   return true;
