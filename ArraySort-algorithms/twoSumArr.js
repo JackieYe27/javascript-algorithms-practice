@@ -14,36 +14,19 @@ let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let target = 10
 
 let sum = ((arr, target) => {
-    let sum = [];
+    let result = [];
     for (let i = 0; i < arr.length; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-            for (let k = j + 1; k < arr.length; k++) {
-                if (arr[i] + arr[j] + arr[k] === target) {
-                    sum.push([arr[i], arr[j], arr[k]]);
-                }
-            }
-        }
+      for (let j = i+1; j < arr.length; j++) {
+          if (arr[i] + arr[j] === target) {
+              result.push(arr[i], arr[j]);
+          }
+      }
     }
-
-    return sum;
+    return result;
 });
 
 
 sum(array, target);
 
 
-
-const twoSum = (arr, target) => {
-	var result = [];
-
-	for (var i = 0; i < arr.length; i++) {
-		for (var j = i + 1; j < arr.length; j++) {
-			if (arr[i] + arr[j] === target) {
-				result.push(i);
-				result.push(j);
-			}
-		}
-	}
-	return result;
-}
 
