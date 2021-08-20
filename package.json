@@ -1,0 +1,22 @@
+{
+  "name": "javascript-algorithms-practice",
+  "version": "1.0.0",
+  "description": "A log of daily practice problems.",
+  "main": "anagrams.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackieYe27/javascript-algorithms-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackieYe27/javascript-algorithms-practice/issues"
+  },
+  "homepage": "https://github.com/JackieYe27/javascript-algorithms-practice#readme",
+  "dependencies": {
+    "node": "^16.6.1"
+  }
+}
