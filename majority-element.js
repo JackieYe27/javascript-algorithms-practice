@@ -13,20 +13,19 @@
 */
 
 const majority = (nums) => {
+  let total = Math.floor(nums.length / 2);
   let hash = {};
   for (let i = 0; i < nums.length; i++) {
     let current = nums[i];
     hash[current] = (hash[current] || 0) + 1;
   }
-  let major = 0;
   let output;
   for (let key in hash) {
-    if (hash[key] > major) {
-      major = hash[key];
-      output = key;
+    if (hash[key] > total) {
+      return key
     }
   }
-  return output
+  return -1;
 }
 
 console.log(majority([3,2,3])) //3
