@@ -87,7 +87,7 @@ const userCheck = (survey, users) => {
 
 
 const urlify = (str) => {
-  let arrStr = str.split("")
+  let arrStr = str.split("");
   for (let i = 0; i < arrStr.length; i++) {
     if (arrStr[i] === " ") {
       arrStr[i] = "%20";
@@ -120,6 +120,22 @@ const urlify = (str) => {
       return Object.keys(hash) === 1;
     }
   }
+
+  const validPalindrome = (s) => {
+    let clean = s.toLowerCase().replace(/[^0-9a-z]/g, "");
+    let left = 0;
+    let right = clean.length-1;
+    while (left < right) {
+      if (clean[left] !== clean[right]) {
+        return false;
+      }
+      left++;
+      right--
+    }
+    return true;
+  }
+
+  console.log(validPalindrome("race car, race car, race. car")); // true
 
 /*
 
