@@ -43,3 +43,20 @@ const floodFill = (image, sr, sc, newColor) => {
 
 console.log(floodFill([[1,1,1],[1,1,0],[1,0,1]], 1, 1, 2)); //Output: [[2,2,2],[2,2,0],[2,0,1]]
 console.log(floodFill([[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2)); //Output: [[2,2,2],[2,2,2]]
+
+
+// Max Area of Island
+/*
+
+You are given an m x n binary matrix grid. An island is a group of 1's (representing land) 
+connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
+
+The area of an island is the number of cells with a value 1 in the island.
+
+Return the maximum area of an island in grid. If there is no island, return 0.
+
+*/
+
+const maxAreaOfIsland = (grid) => {
+ 
+}
