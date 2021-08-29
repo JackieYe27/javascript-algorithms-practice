@@ -24,5 +24,22 @@ Output: [[2,2,2],[2,2,2]]
 */
 
 const floodFill = (image, sr, sc, newColor) => {
-  
+
+  const fill = (image, sr, sc, color, newColor) => {
+    if (sr < 0 || sr >= image.length || sc < 0 || sc >= image[0].length || image[sr][sc] !== color) {
+      return;
+    }
+    image[sr][sc] = newColor;
+
+    fill(image, sr+1, sc, color, newColor);
+    fill(image, sr-1, sc, color, newColor);    
+    fill(image, sr, sc+1, color, newColor); 
+    fill(image, sr, sc-1, color, newColor);    
+  }
+
+  fill(image, sr, sc, image[sr][sc], newColor);
+  return image;
 }
+
+console.log(floodFill([[1,1,1],[1,1,0],[1,0,1]], 1, 1, 2)); //Output: [[2,2,2],[2,2,0],[2,0,1]]
+console.log(floodFill([[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2)); //Output: [[2,2,2],[2,2,2]]
