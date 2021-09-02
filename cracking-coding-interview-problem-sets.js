@@ -111,18 +111,21 @@ const urlify = (str) => {
   const isPalindrome = (s) => {
     let hash = {};
     let count = 0;
-    for(let i = 0; i < s.length; i++) {
-      if (hash[s[i]]) {
-        delete hash[s[i]];
-      } else {
-        hash[s[i]] = true
-      };
-      count++;
+    
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] !== " ") {
+        if (hash[s[i]]) {
+          delete hash[s[i]]
+        } else {
+          hash[s[i]] = true;
+        }
+        count++;
+      }
     }
     if (count % 2 === 0) {
-      return Object.keys(hash) === 0;
+      return Object.keys(hash).length === 0;
     } else {
-      return Object.keys(hash) === 1;
+      return Object.keys(hash).length === 1;
     }
   }
 
