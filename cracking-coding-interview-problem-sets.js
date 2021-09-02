@@ -98,13 +98,7 @@ const userCheck = (survey, users) => {
 
 
 const urlify = (str) => {
-  let arrStr = str.split("");
-  for (let i = 0; i < arrStr.length; i++) {
-    if (arrStr[i] === " ") {
-      arrStr[i] = "%20";
-    }
-  }
-  return arrStr.join("");
+  return str.split(" ").join("%20");
 }
 
 // St4ring permuation
