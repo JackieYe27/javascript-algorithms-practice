@@ -1,6 +1,6 @@
 const isUnique = (string) => {
-  for (let i = 0; i < string.length; i++) {
-    for (let j = i+1; j < string.length; j++) {
+  for (let i = 0; i < string.length ; i++) {
+    for (let j = i + 1; j < string.length; j++) {
       if (string[i] === string[j]) {
         return false;
       }
@@ -74,15 +74,21 @@ const users = [
 ]
 
 const userCheck = (survey, users) => {
+  let final = [];
   for (let i = 0; i < survey.length; i++) {
     let currentSurvey = survey[i];
     for (let j = 0; j < users.length; j++) {
       let currentUser = users[i];
       for (let key in currentSurvey) {
-        
+        if (key !== "name") {
+          if(currentSurvey[key].includes(currentUser[key])) {
+            final.push({currentUser, currentSurvey})
+          }
+        }
       }
     }
   }
+  return final;
 }
 
 
