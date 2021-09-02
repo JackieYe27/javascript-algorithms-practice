@@ -10,21 +10,26 @@ const isUnique = (string) => {
 }
 
 const permutation = (str1, str2) => {
-  let obj1 = {};
-  let obj2 = {};
-  for (let i = 0; i< str1.length; i++) {
-    obj1[str1[i]] = (obj1[str1[i]] || 0) + 1;
+  let hash1 = {};
+  let hash2 = {};
+
+  if (str1.length !== str2.length) return false
+
+  for (let i = 0; i < str1.length; i++) {
+    let curr = str1[i];
+    hash1[curr] = (hash1[curr] || 0) + 1;
   }
 
   for (let j = 0; j < str2.length; j++) {
-    obj2[str2[j]] = (obj2[str2[j]] || 0) + 1;
+    let curr = str2[j];
+    hash2[curr] = (hash2[curr] || 0) + 1;
   }
 
-  for(let key in obj1) {
-    if (!(key in obj2)) {
+  for (let key in hash1) {
+    if (!(key in hash2)) {
       return false;
     }
-    if (obj2[key] !== obj1[key]) {
+    if (hash2[key] !== hash1[key]) {
       return false;
     }
   }
