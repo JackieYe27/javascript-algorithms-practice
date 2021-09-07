@@ -19,18 +19,14 @@
 let numJewelsInStones = ((j,s) => {
     // create a count of the number of stones we have
     let count = 0;
-    // create the 2 lists
-    let jewelsArr = j.split("");
-    let stonesArr = s.split("");
-    // compare each jewele to each stone
-    jewelsArr.forEach(jewel => {
-        stonesArr.forEach(stone => {
-            if (stone === jewel) {
-                count++
+    for (let i = 0; i < j.length; i++) {
+        for (k = 0; k < s.length; k++) {
+            if (j[i] === s[k]) {
+                count++;
             }
-        })
-    })
+        }
+    }
     return count;
 });
 
-numJewelsInStones("aAAbbbb", "aA"); //3
+console.log(numJewelsInStones("aAAbbbb", "aA")); //3
