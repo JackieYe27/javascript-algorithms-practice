@@ -13,9 +13,8 @@ let areThereDuplicates = (...arguments) => {
     for (let val in arguments) {
         collection[arguments[val]] = (collection[arguments[val]] || 0) + 1;
     }
-    console.log(collection)
+    console.log(collection);
     for (let val in collection) {
-        console.log(collection[val])
         if (collection[val] > 1) {
             return true;
         }
@@ -23,6 +22,6 @@ let areThereDuplicates = (...arguments) => {
     return false;
 }
 
-areThereDuplicates("a", 2, "b", 3, "a")
-areThereDuplicates(1,2,3)
-areThereDuplicates(1,2,2)
+console.log(areThereDuplicates("a", 2, "b", 3, "a")) // True
+console.log(areThereDuplicates(1,2,3)) // false
+console.log(areThereDuplicates(1,2,2)) // true
