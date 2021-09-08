@@ -14,20 +14,21 @@
 // average can be found by adding the two then dividing by 2
 
 let averagePair = (array, average) => {
-    let left = 0;
-    let right = array.length - 1;
-
-    while (left < right) {
-        let avg = (array[left] + array[right]) / 2;
-        if (avg === average) {
-            return true;
-        } else if (avg > average) {
-            right--
-        } else {
-            left++
+    let start = 0;
+    let end = array.length - 1;
+    let result = [];
+    while (start < end) {
+        if (((array[start] + array[end]) / 2) < average) {
+            start++;
+        } else if (((array[start] + array[end]) / 2) > average) {
+            end--;
+        } else if (((array[start] + array[end]) / 2) === average) {
+            result.push(array[start], array[end]);
+            break;
         }
     }
-    return false;
+    return result;
 }
 
-averagePair([1,2,3,4,5], 2)
+console.log(averagePair([1,2,2,3,4,5], 2)) // [1,3]
+console.log(averagePair([1,4,5,6,7,7,8,8,10,15], 5)) // [4,6]
