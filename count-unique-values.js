@@ -14,17 +14,17 @@
 // return the count
 
 let countUniqueValues = (arr) => {
+    let count = 0;
     let i = 0;
-    if (arr.length = 0) {
-        return 0;
-    }
     for (let j = 1; j < arr.length; j++) {
         if (arr[i] !== arr[j]) {
             i++;
+            count++;
             arr[i] = arr[j];
-        }
+        } 
     }
-    return i + 1
+    return count + 1;
 }
 
-countUniqueValues([1,2,3,4,7,8,9,9,9,9])
+console.log(countUniqueValues([1,2,3,3,4,5,6,7,8,9,9,9,9])) // 7
+console.log(countUniqueValues([1,2,3,3,4,5,6,6,6])) // 5
