@@ -17,22 +17,17 @@
     // if we find a . then change it to equal [.] and add to defangAdd
 // return defangAdd
 
-let defang = (ipAddress => {
-    let dotObj = {
-        ".":true
-    }
-    let defangAdd = "";
-    for (let i=0; i < ipAddress.length; i++) {
-        if (dotObj[ipAddress[i]]) {
-            defangAdd += "[.]";
-        } else {
-            defangAdd += ipAddress[i];
+let defang = (ipAddress) => {
+    let s = ipAddress.split("");
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === ".") {
+            s[i] = "[.]"
         }
     }
-    return defangAdd;
-});
+    return s.join("");
+};
 
-defang("255.100.50.0")
+console.log(defang("255.100.50.0"));
 
 // split address at each "." since its a string to become array [1,2,3]...
 // then join where we change the comma into [.];
