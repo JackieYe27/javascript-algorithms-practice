@@ -23,16 +23,16 @@
 // return new array
 
 decompressRLElist = (nums) => {
-    let decompArr = [];
-    // the loop needs to be every other number so i+=2
-    for (i = 0; i < nums.length; i+=2) {
-        let count = nums[i];
-        while( count > 0) {
-            decompArr.push(nums[i+1]);
-            count--
+    let final = [];
+    // the loop should skip every other element in nums array that way we can create pairs of freq and val
+    for (let i = 0; i < nums.length; i += 2) {
+        let freq = nums[i];
+        while (freq > 0) {
+            final.push(nums[i + 1]);
+            freq--;
         }
     }
-    return decompArr;
+    return final;
 };
 
-decompressRLElist([1,1,2,3])
+console.log(decompressRLElist([1,1,2,3])) // [1,3,3]
