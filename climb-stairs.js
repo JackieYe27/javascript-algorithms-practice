@@ -21,5 +21,13 @@ Example 2:
 */
 
 const climbStairs = (n) => {
-  
+  let memo = [1,1,2]; // 0 steps only 1 way to get up, 1 step only 1 way, 2 steps only 2 ways
+  for (let i = 3; i <= n; i++) {
+    memo[i] = memo[i - 1] + memo[i - 2];
+  }
+  return memo[n];
 }
+
+console.log(climbStairs(6)); // 13
+console.log(climbStairs(5)); // 8
+
