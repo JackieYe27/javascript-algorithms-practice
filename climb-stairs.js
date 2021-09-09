@@ -30,4 +30,6 @@ const climbStairs = (n) => {
 
 console.log(climbStairs(6)); // 13
 console.log(climbStairs(5)); // 8
+console.log(climbStairs(0)); // 1
+
 
