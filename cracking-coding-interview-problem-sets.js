@@ -186,3 +186,27 @@ const oneEditAway = (s1, s2) => {
   }
   return true;
 }
+
+/*
+
+  Implement a method to perform basic string compression using the counts of repeated characters.
+  For example, the string aabcccccaaa would become a2b1c5a3. If the "compressed" string owuld not become smaller than the original
+  your method should return the original string. You can assume the string has only uppercase or lowercase letters.
+
+*/
+
+const stringcompression = (str) => {
+  let op = "";
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    let curr = str[i];
+    let next = str[i + 1]
+    if (curr === next) {
+      count++;
+    } else {
+      op += curr + String(count);
+      count = 1;
+    }
+  }
+  return op.length < str.length ? op : str;
+}
