@@ -210,3 +210,34 @@ const stringcompression = (str) => {
   }
   return op.length < str.length ? op : str;
 }
+
+/*
+
+  Given an array, rotate the array to the right by k steps, where k is non-negative.
+
+*/
+
+// only need to rotate array k % length of the array (the pattern after doing a few rotations)
+// reverse the whole array
+// reverse again the array from beginning to k - 1 (starts at 0 idx)
+// reverse the rest of the array to get it back into og form
+
+// reverse function takes in the array, start and end
+// just switches start element with end element
+
+const reverse = (arr, start, end) => {
+  while (start < end) {
+    let temp = arr[start];
+    end = temp;
+    temp = arr[start];
+    start++;
+    end--;
+  }
+}
+const rotateArr = (arr, k) => {
+  k = k % arr.length;
+
+  reverse(arr, 0, arr.length - 1);
+  reverse(arr, 0, k - 1);
+  reverse(arr, k, arr.length - 1);
+}
